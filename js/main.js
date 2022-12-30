@@ -1,6 +1,6 @@
 "use strict";
 
-/***************** home text effect *******************/
+/*****************  메인 홈 마우스효과 *******************/
 const text = document.querySelectorAll(".main_text");
 const text_second = document.querySelectorAll(".main_text_second");
 const text_third = document.querySelectorAll(".main_text_third");
@@ -38,7 +38,8 @@ document.addEventListener("mousemove", (e) => {
     });
   });
 });
-/***************** click to section *******************/
+
+/***************** 네브바 클릭하면 섹션 이동하기 *******************/
 const navbarMenu = document.querySelector(".navbar_menu");
 navbarMenu.addEventListener("click", (event) => {
   const target = event.target;
@@ -51,13 +52,13 @@ navbarMenu.addEventListener("click", (event) => {
   scrollTo.scrollIntoView({ behavior: "smooth" });
 });
 
-/***************** navbar toggle small screen *******************/
+/***************** 반응형 네브바 클릭시 나타나게 하기 *******************/
 const navbarToggleBtn = document.querySelector(".navbar_toggle-btn");
 navbarToggleBtn.addEventListener("click", () => {
   navbarMenu.classList.toggle("open");
 });
 
-/***************** portfolio swiper *******************/
+/***************** 포트폴리오 스와이퍼 *******************/
 let swiper = new Swiper(".mySwiper", {
   slidesPerView: 2,
   centeredSlides: true,
@@ -72,3 +73,36 @@ let swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+  /***************** 스킬 숫자 카운트 *******************/
+  //숫자 카운트 
+  let numAnimation = document.querySelectorAll(".num_animation");
+  let skillList = document.querySelectorAll(".skill_list");
+  
+  skillList.forEach(function(el,index){
+      el.addEventListener("mouseenter",function(){
+          skillList.forEach((el)=>{
+              el.classList.remove("active");
+          });
+          el.classList.add("active");
+          changeNum(index);
+      });
+      el.addEventListener("mouseleave",function(){
+          skillList.forEach((el)=>{
+              el.classList.remove("active");
+          });
+      });
+  });
+
+  //숫자 카운트 함수
+  function changeNum(index){
+      let num = 0;
+      let targetNum = numAnimation[index].getAttribute("data-rate");
+      let timer = setInterval(function(){
+      ++num;
+      numAnimation[index].innerText = num;
+      if(num == targetNum){
+              clearInterval(timer);
+          }
+      },10);
+  }
