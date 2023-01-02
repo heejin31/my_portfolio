@@ -453,8 +453,8 @@ p {
   margin-right: 30px;
   position: relative;
   display: inline-block;
- 
 }
+
 .portfolio_btn_wrap .gotosite {
   border: 1px solid var(--color-red);
   color: var(--color-red);
@@ -523,12 +523,14 @@ p {
 .swiper-button-prev:after {
   color: var(--color-white);
   left: 23vw;
+  font-weight: bold;
   top: calc(50% + 1vw);
   position: relative;
 }
 .swiper-button-next:after {
   color: var(--color-white);
   top: calc(50% + 1vw);
+  font-weight: bold;
   right: 23vw;
   position: relative;
 }
