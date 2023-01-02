@@ -6,7 +6,16 @@
   .navbar_menu_item {
     margin: 0 50px;
   }
+  .portfolio_desc p {  
+    margin-bottom: 10px;  
+  } 
+  .github span, .gotosite span {
+    font-size: 1vw;    
+  }
 }
+
+
+
 
 @media screen and (max-width: 768px) {
   .navbar_toggle-btn {
